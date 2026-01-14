@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recopilación de Datos de Usuario</title>
+    <link rel="stylesheet" href="datosdeusuario.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <!-- Progress Bar -->
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+                <div class="progress-text">
+                    <span id="current-step">1</span> / <span id="total-steps">5</span>
+                </div>
+            </div>
+
+            <h1>Completa tu Perfil</h1>
+            <p class="description">
+                Responde estas preguntas para personalizar tu experiencia.
+            </p>
+
+            <!-- Question 1: Nombre -->
+            <div class="question-step active" id="step-1">
+                <div class="question-header">
+                    <h2>¿Cuál es tu nombre completo?</h2>
+                    <p class="question-description">Escribe tu nombre para que podamos personalizar tu experiencia.</p>
+                </div>
+                <div class="question-content">
+                    <input type="text" id="nombre-completo" name="nombre-completo" 
+                           placeholder="Escribe tu nombre completo" class="step-input">
+                </div>
+                <div class="question-actions">
+                    <button type="button" class="btn-next" onclick="nextStep(1)">
+                        Siguiente <span>→</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Question 2: Fines -->
+            <div class="question-step" id="step-2">
+                <div class="question-header">
+                    <h2>¿Para qué fines usarás nuestra plataforma?</h2>
+                    <p class="question-description">Puedes seleccionar todas las opciones que apliquen a tu caso.</p>
+                </div>
+                <div class="question-content">
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="tipo-fines" value="personales">
+                            <span class="checkbox-custom"></span>
+                            <div class="checkbox-content">
+                                <span class="checkbox-title">Fines Personales</span>
+                                <span class="checkbox-desc">Uso individual para gestión personal</span>
+                            </div>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="tipo-fines" value="negocio">
+                            <span class="checkbox-custom"></span>
+                            <div class="checkbox-content">
+                                <span class="checkbox-title">Fines de Negocio</span>
+                                <span class="checkbox-desc">Uso empresarial o comercial</span>
+                            </div>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="tipo-fines" value="pareja">
+                            <span class="checkbox-custom"></span>
+                            <div class="checkbox-content">
+                                <span class="checkbox-title">Fines de Pareja</span>
+                                <span class="checkbox-desc">Uso compartido con tu pareja</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                <div class="question-actions">
+                    <button type="button" class="btn-prev" onclick="prevStep(2)">
+                        <span>←</span> Anterior
+                    </button>
+                    <button type="button" class="btn-next" onclick="nextStep(2)">
+                        Siguiente <span>→</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Question 3: Tipo de Pago -->
+            <div class="question-step" id="step-3">
+                <div class="question-header">
+                    <h2>¿Cuál es tu tipo de pago preferido?</h2>
+                    <p class="question-description">Selecciona la frecuencia que mejor se adapte a tus necesidades.</p>
+                </div>
+                <div class="question-content">
+                    <select id="tipo-pago" name="tipo-pago" class="step-select">
+                        <option value="">Selecciona una opción</option>
+                        <option value="mensual">Mensual - Pago mensual</option>
+                        <option value="quincenal">Quincenal - Pago cada 15 días</option>
+                        <option value="semestral">Semestral - Pago cada 6 meses</option>
+                        <option value="anual">Anual - Pago anual</option>
+                    </select>
+                </div>
+                <div class="question-actions">
+                    <button type="button" class="btn-prev" onclick="prevStep(3)">
+                        <span>←</span> Anterior
+                    </button>
+                    <button type="button" class="btn-next" onclick="nextStep(3)">
+                        Siguiente <span>→</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Question 4: Monto -->
+            <div class="question-step" id="step-4">
+                <div class="question-header">
+                    <h2>¿Cuánto estarías dispuesto a pagar?</h2>
+                    <p class="question-description">Indica el monto que consideras justo para el servicio.</p>
+                </div>
+                <div class="question-content">
+                    <div class="input-group">
+                        <span class="currency">$</span>
+                        <input type="number" id="monto-pago" name="monto-pago" 
+                               min="0" step="0.01" placeholder="0.00" class="step-input">
+                    </div>
+                </div>
+                <div class="question-actions">
+                    <button type="button" class="btn-prev" onclick="prevStep(4)">
+                        <span>←</span> Anterior
+                    </button>
+                    <button type="button" class="btn-next" onclick="nextStep(4)">
+                        Siguiente <span>→</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Question 5: Foto de Perfil -->
+            <div class="question-step" id="step-5">
+                <div class="question-header">
+                    <h2>¿Quieres agregar una foto de perfil?</h2>
+                    <p class="question-description">Es opcional, pero ayuda a personalizar tu experiencia.</p>
+                </div>
+                <div class="question-content">
+                    <div class="file-upload">
+                        <input type="file" id="foto-perfil" name="foto-perfil" 
+                               accept="image/*" onchange="previewImage(event)">
+                        <div class="file-upload-label" id="file-label">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 6c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-4-4-4zm1.5 0c.83 0 1.5-.67 1.5-1.5s-.67-1.5-1.5-1.5-1.5.67-1.5 1.5.67 1.5 1.5 1.5zm-4.5 7v-2h1v2h-1v2h-1v2h1v-2h1zm7 0v2h-1v2h-1v2h-1v2h1v-2h1zm-8 4v12h16v-12h-16z"/>
+                            </svg>
+                            <span id="file-text">Seleccionar foto</span>
+                        </div>
+                        <div class="image-preview" id="image-preview">
+                            <img id="preview-img" src="" alt="Vista previa">
+                        </div>
+                    </div>
+                </div>
+                <div class="question-actions">
+                    <button type="button" class="btn-prev" onclick="prevStep(5)">
+                        <span>←</span> Anterior
+                    </button>
+                    <button type="button" class="btn-skip" onclick="skipPhoto()">
+                        Omitir foto
+                    </button>
+                    <button type="button" class="btn-finish" onclick="saveProfile()">
+                        Finalizar <span>✓</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mensajes -->
+            <div id="message" class="message"></div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../CONFIGURACION DE SUPABASE/supabase-config.js"></script>
+    <script src="../CONFIGURACION DE SUPABASE/supabase-client.js"></script>
+    <script type="module" src="datosdeusuario.js"></script>
+</body>
+</html>

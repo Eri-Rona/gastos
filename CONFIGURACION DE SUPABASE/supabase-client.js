@@ -98,8 +98,8 @@ window.auth = {
     // Obtener usuario actual
     async getCurrentUser() {
         try {
-            const { data: { user }, error } = await window.supabase.auth.getUser();
-            return { user, error };
+            const { data: { session }, error } = await window.supabase.auth.getSession();
+            return { user: session?.user || null, error };
         } catch (error) {
             return { user: null, error };
         }
