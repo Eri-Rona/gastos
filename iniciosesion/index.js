@@ -14,6 +14,10 @@ const showLoginLink = document.getElementById('show-login');
 const logoutBtn = document.getElementById('logout-btn');
 const googleLoginBtn = document.getElementById('google-login-btn');
 const googleRegisterBtn = document.getElementById('google-register-btn');
+const githubLoginBtn = document.getElementById('github-login-btn');
+const githubRegisterBtn = document.getElementById('github-register-btn');
+const discordLoginBtn = document.getElementById('discord-login-btn');
+const discordRegisterBtn = document.getElementById('discord-register-btn');
 const loginMessage = document.getElementById('login-message');
 const registerMessage = document.getElementById('register-message');
 const userEmailSpan = document.getElementById('user-email');
@@ -82,6 +86,64 @@ googleRegisterBtn.addEventListener('click', async () => {
     } catch (error) {
         showMessage(registerMessage, 'Error de conexión con Google', 'error');
         console.error('Error Google register:', error);
+    }
+});
+
+// Event listeners para GitHub
+githubLoginBtn.addEventListener('click', async () => {
+    try {
+        showMessage(loginMessage, 'Conectando con GitHub...', 'success');
+        const { data, error } = await auth.signInWithGitHub();
+        
+        if (error) {
+            showMessage(loginMessage, `Error: ${error.message}`, 'error');
+        }
+    } catch (error) {
+        showMessage(loginMessage, 'Error de conexión con GitHub', 'error');
+        console.error('Error GitHub login:', error);
+    }
+});
+
+githubRegisterBtn.addEventListener('click', async () => {
+    try {
+        showMessage(registerMessage, 'Conectando con GitHub...', 'success');
+        const { data, error } = await auth.signInWithGitHub();
+        
+        if (error) {
+            showMessage(registerMessage, `Error: ${error.message}`, 'error');
+        }
+    } catch (error) {
+        showMessage(registerMessage, 'Error de conexión con GitHub', 'error');
+        console.error('Error GitHub register:', error);
+    }
+});
+
+// Event listeners para Discord
+discordLoginBtn.addEventListener('click', async () => {
+    try {
+        showMessage(loginMessage, 'Conectando con Discord...', 'success');
+        const { data, error } = await auth.signInWithDiscord();
+        
+        if (error) {
+            showMessage(loginMessage, `Error: ${error.message}`, 'error');
+        }
+    } catch (error) {
+        showMessage(loginMessage, 'Error de conexión con Discord', 'error');
+        console.error('Error Discord login:', error);
+    }
+});
+
+discordRegisterBtn.addEventListener('click', async () => {
+    try {
+        showMessage(registerMessage, 'Conectando con Discord...', 'success');
+        const { data, error } = await auth.signInWithDiscord();
+        
+        if (error) {
+            showMessage(registerMessage, `Error: ${error.message}`, 'error');
+        }
+    } catch (error) {
+        showMessage(registerMessage, 'Error de conexión con Discord', 'error');
+        console.error('Error Discord register:', error);
     }
 });
 

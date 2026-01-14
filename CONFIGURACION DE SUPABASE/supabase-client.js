@@ -42,6 +42,36 @@ window.auth = {
         }
     },
 
+    // Iniciar sesión con GitHub
+    async signInWithGitHub() {
+        try {
+            const { data, error } = await window.supabase.auth.signInWithOAuth({
+                provider: 'github',
+                options: {
+                    redirectTo: 'http://localhost/PROYECTO%203PARCIAL/index.html'
+                }
+            });
+            return { data, error };
+        } catch (error) {
+            return { data: null, error };
+        }
+    },
+
+    // Iniciar sesión con Discord
+    async signInWithDiscord() {
+        try {
+            const { data, error } = await window.supabase.auth.signInWithOAuth({
+                provider: 'discord',
+                options: {
+                    redirectTo: 'http://localhost/PROYECTO%203PARCIAL/index.html'
+                }
+            });
+            return { data, error };
+        } catch (error) {
+            return { data: null, error };
+        }
+    },
+
     // Iniciar sesión
     async signIn(email, password) {
         try {

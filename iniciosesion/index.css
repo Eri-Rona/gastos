@@ -111,6 +111,40 @@ button:active {
     box-shadow: 0 1px 6px rgba(32,33,36,.28);
 }
 
+.github-btn {
+    background: #24292e;
+    color: white;
+    border: 2px solid #24292e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-weight: 500;
+}
+
+.github-btn:hover {
+    background: #30363d;
+    border-color: #30363d;
+    box-shadow: 0 1px 6px rgba(0,0,0,.3);
+}
+
+.discord-btn {
+    background: #5865F2;
+    color: white;
+    border: 2px solid #5865F2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-weight: 500;
+}
+
+.discord-btn:hover {
+    background: #4752C3;
+    border-color: #4752C3;
+    box-shadow: 0 1px 6px rgba(88,101,242,.3);
+}
+
 .switch-form {
     text-align: center;
     margin-top: 20px;
