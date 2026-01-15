@@ -563,11 +563,13 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log(`Navegando a: ${linkText}`);
             
             if (linkText === 'Gastos') {
-                window.location.href = 'gastos/gastos.html';
+                window.location.href = 'http://localhost/PROYECTO%203PARCIAL/dashboard/gastos/gastos.html';
             } else if (linkText === 'Ingresos') {
-                window.location.href = 'ingresos/ingresos.html';
+                window.location.href = 'http://localhost/PROYECTO%203PARCIAL/dashboard/ingresos/ingresos.html';
             } else if (linkText === 'Pareja') {
                 window.location.href = 'http://localhost/PROYECTO%203PARCIAL/dashboard/pareja/pareja.html';
+            } else if (linkText === 'Negocios') {
+                window.location.href = 'http://localhost/PROYECTO%203PARCIAL/dashboard/negocios/negocios.html';
             }
         });
     });

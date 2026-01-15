@@ -549,13 +549,16 @@ document.addEventListener('DOMContentLoaded', () => {
             
             if (linkText.trim() === 'Dashboard') {
                 console.log('Redirigiendo a Dashboard');
-                window.location.href = '../Dashboard.html';
+                window.location.href = 'http://localhost/PROYECTO%203PARCIAL/dashboard/Dashboard.html';
             } else if (linkText.trim() === 'Gastos') {
                 console.log('Redirigiendo a Gastos');
-                window.location.href = '../gastos/gastos.html';
+                window.location.href = 'http://localhost/PROYECTO%203PARCIAL/dashboard/gastos/gastos.html';
             } else if (linkText.trim() === 'Pareja') {
                 console.log('Redirigiendo a Pareja');
                 window.location.href = 'http://localhost/PROYECTO%203PARCIAL/dashboard/pareja/pareja.html';
+            } else if (linkText.trim() === 'Negocios') {
+                console.log('Redirigiendo a Negocios');
+                window.location.href = 'http://localhost/PROYECTO%203PARCIAL/dashboard/negocios/negocios.html';
             } else {
                 console.log('No se encontró coincidencia para:', `"${linkText}"`);
                 console.log('Longitud del texto:', linkText.length);
