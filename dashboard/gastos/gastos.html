@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gastos - Mi Espacio</title>
+    <link rel="stylesheet" href="gastos.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Menú</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="../../dashboard/Dashboard.html" class="nav-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/>
+                            </svg>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="#" class="nav-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1.41 16.09V20h-2.67v-1.93c-1.71-.36-3.16-1.46-3.27-3.4h1.96c.1.81.45 1.61 1.67 1.61 1.16 0 1.6-.64 1.6-1.46 0-.84-.68-1.22-2.05-1.76-1.29-.51-2.73-1.24-2.73-2.97 0-1.39.96-2.49 2.58-2.86V5h2.67v1.7c1.52.36 2.54 1.51 2.63 3.13h-1.96c-.05-.6-.38-1.21-1.39-1.21-1.02 0-1.46.54-1.46 1.22 0 .65.49.97 1.84 1.5 1.32.52 2.93 1.23 2.93 3.22 0 1.48-1.02 2.64-2.79 3.03z"/>
+                            </svg>
+                            <span>Gastos</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <div class="main-content-area">
+            <!-- Header -->
+            <header class="dashboard-header">
+                <div class="header-content">
+                    <div class="logo-section">
+                        <h1></h1>
+                    </div>
+                    <div class="user-section">
+                        <div class="user-dropdown">
+                            <div class="user-avatar-container" id="user-dropdown-trigger">
+                                <img id="user-avatar" src="" alt="Avatar" class="user-avatar">
+                                <div class="user-info-inline">
+                                    <span id="user-name-inline" class="user-name-inline">Usuario</span>
+                                </div>
+                                <div class="dropdown-arrow">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M7 10l5 5 5-5z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="dropdown-menu" id="dropdown-menu">
+                                <div class="dropdown-header">
+                                    <span id="dropdown-user-name" class="dropdown-user-name">Usuario</span>
+                                    <span id="dropdown-user-email" class="dropdown-user-email">email@example.com</span>
+                                </div>
+                                <div class="dropdown-divider"></div>
+                                <button class="dropdown-item" id="edit-profile-dropdown">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/>
+                                    </svg>
+                                    Editar Perfil
+                                </button>
+                                <button class="dropdown-item logout-item" id="logout-dropdown">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"/>
+                                    </svg>
+                                    Cerrar Sesión
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Main Content -->
+            <main class="dashboard-main">
+                <!-- Welcome Section -->
+                <section class="welcome-section">
+                    <div class="welcome-content">
+                        <h2>Gestión de Gastos</h2>
+                        <p>Administra y controla todos tus gastos de manera eficiente.</p>
+                    </div>
+                </section>
+
+                <!-- Gastos Overview -->
+                <section class="overview-section">
+                    <h3>Resumen de Gastos</h3>
+                    <div class="overview-grid">
+                        <div class="overview-card">
+                            <div class="card-header">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1.41 16.09V20h-2.67v-1.93c-1.71-.36-3.16-1.46-3.27-3.4h1.96c.1.81.45 1.61 1.67 1.61 1.16 0 1.6-.64 1.6-1.46 0-.84-.68-1.22-2.05-1.76-1.29-.51-2.73-1.24-2.73-2.97 0-1.39.96-2.49 2.58-2.86V5h2.67v1.7c1.52.36 2.54 1.51 2.63 3.13h-1.96c-.05-.6-.38-1.21-1.39-1.21-1.02 0-1.46.54-1.46 1.22 0 .65.49.97 1.84 1.5 1.32.52 2.93 1.23 2.93 3.22 0 1.48-1.02 2.64-2.79 3.03z"/>
+                                </svg>
+                                <h4>Total del Mes</h4>
+                            </div>
+                            <div class="card-content">
+                                <div class="amount-display">
+                                    <span class="amount" id="total-mes">$0.00</span>
+                                    <span class="period">Este mes</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="overview-card" onclick="showTodayExpensesModal()" style="cursor: pointer;">
+                            <div class="card-header">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/>
+                                </svg>
+                                <h4>Gastos Hoy</h4>
+                            </div>
+                            <div class="card-content">
+                                <div class="amount-display">
+                                    <span class="amount" id="gastos-hoy">$0.00</span>
+                                    <span class="period">Hoy</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="overview-card">
+                            <div class="card-header">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/>
+                                </svg>
+                                <h4>Tendencia Mensual</h4>
+                            </div>
+                            <div class="card-content">
+                                <div class="trend-display">
+                                    <span class="trend-value" id="tendencia">+0%</span>
+                                    <span class="trend-period">vs mes anterior</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="overview-card">
+                            <div class="card-header">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                                </svg>
+                                <h4>Gastos Semana</h4>
+                            </div>
+                            <div class="card-content">
+                                <div class="amount-display">
+                                    <span class="amount" id="gastos-semana">$0.00</span>
+                                    <span class="period">Esta semana</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Add New Expense -->
+                <section class="add-expense-section">
+                    <h3>Agregar Nuevo Gasto</h3>
+                    <div class="expense-form">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="expense-amount">Monto</label>
+                                <input type="number" id="expense-amount" placeholder="0.00" step="0.01" min="0">
+                            </div>
+                            <div class="form-group">
+                                <label for="expense-category">Categoría</label>
+                                <select id="expense-category">
+                                    <option value="">Seleccionar categoría</option>
+                                    
+                                    <!-- Alimentación -->
+                                    <optgroup label="🍔 Alimentación">
+                                        <option value="supermercado">Supermercado</option>
+                                        <option value="restaurant">Restaurantes</option>
+                                        <option value="cafe">Café y Snacks</option>
+                                        <option value="comida_rapida">Comida Rápida</option>
+                                        <option value="delivery">Delivery</option>
+                                        <option value="bebidas">Bebidas</option>
+                                        <option value="alimentos_mascotas">Alimentos Mascotas</option>
+                                    </optgroup>
+                                    
+                                    <!-- Transporte -->
+                                    <optgroup label="🚗 Transporte">
+                                        <option value="gasolina">Gasolina</option>
+                                        <option value="transporte_publico">Transporte Público</option>
+                                        <option value="taxi_uber">Taxi/Uber</option>
+                                        <option value="mantenimiento_vehiculo">Mantenimiento Vehículo</option>
+                                        <option value="seguro_vehiculo">Seguro Vehículo</option>
+                                        <option value="peajes">Peajes</option>
+                                        <option value="estacionamiento">Estacionamiento</option>
+                                        <option value="repuestos">Repuestos</option>
+                                    </optgroup>
+                                    
+                                    <!-- Vivienda -->
+                                    <optgroup label="🏠 Vivienda">
+                                        <option value="renta">Renta</option>
+                                        <option value="hipoteca">Hipoteca</option>
+                                        <option value="servicios_basicos">Servicios Básicos</option>
+                                        <option value="electricidad">Electricidad</option>
+                                        <option value="agua">Agua</option>
+                                        <option value="gas">Gas</option>
+                                        <option value="internet">Internet</option>
+                                        <option value="telefono">Teléfono</option>
+                                        <option value="cable">Cable TV</option>
+                                        <option value="impuestos_vivienda">Impuestos Vivienda</option>
+                                    </optgroup>
+                                    
+                                    <!-- Salud y Bienestar -->
+                                    <optgroup label="🏥 Salud y Bienestar">
+                                        <option value="medicamentos">Medicamentos</option>
+                                        <option value="consultas_medicas">Consultas Médicas</option>
+                                        <option value="seguro_salud">Seguro Salud</option>
+                                        <option value="dentista">Dentista</option>
+                                        <option value="optica">Óptica/Lentes</option>
+                                        <option value="gimnasio">Gimnasio</option>
+                                        <option value="suplementos">Suplementos</option>
+                                        <option value="terapia">Terapia</option>
+                                        <option value="examenes_medicos">Exámenes Médicos</option>
+                                    </optgroup>
+                                    
+                                    <!-- Compras -->
+                                    <optgroup label="🛍️ Compras">
+                                        <option value="ropa">Ropa y Calzado</option>
+                                        <option value="electronica">Electrónica</option>
+                                        <option value="hogar">Artículos para el Hogar</option>
+                                        <option value="libros">Libros y Material Educativo</option>
+                                        <option value="juguetes">Juguetes</option>
+                                        <option value="regalos">Regalos</option>
+                                        <option value="cosmeticos">Cosméticos y Cuidado Personal</option>
+                                        <option value="herramientas">Herramientas</option>
+                                        <option value="muebles">Muebles</option>
+                                    </optgroup>
+                                    
+                                    <!-- Entretenimiento -->
+                                    <optgroup label="🎬 Entretenimiento">
+                                        <option value="cine">Cine</option>
+                                        <option value="streaming">Streaming (Netflix, etc)</option>
+                                        <option value="videojuegos">Videojuegos</option>
+                                        <option value="conciertos">Conciertos y Eventos</option>
+                                        <option value="deportes">Deportes y Entradas</option>
+                                        <option value="libros_entretenimiento">Libros (Entretenimiento)</option>
+                                        <option value="hobbies">Hobbies</option>
+                                        <option value="viajes_entretenimiento">Viajes de Ocio</option>
+                                    </optgroup>
+                                    
+                                    <!-- Educación -->
+                                    <optgroup label="📚 Educación">
+                                        <option value="matricula">Matrícula Escolar</option>
+                                        <option value="cursos">Cursos y Capacitación</option>
+                                        <option value="material_escolar">Material Escolar</option>
+                                        <option value="idiomas">Idiomas</option>
+                                        <option value="universidad">Universidad</option>
+                                        <option value="tutorias">Tutorías</option>
+                                        <option value="certificaciones">Certificaciones</option>
+                                    </optgroup>
+                                    
+                                    <!-- Finanzas -->
+                                    <optgroup label="💰 Finanzas">
+                                        <option value="inversiones">Inversiones</option>
+                                        <option value="ahorros">Ahorros</option>
+                                        <option value="comisiones_bancarias">Comisiones Bancarias</option>
+                                        <option value="impuestos">Impuestos</option>
+                                        <option value="multas">Multas</option>
+                                        <option value="prestamos">Préstamos</option>
+                                        <option value="tarjetas_credito">Tarjetas de Crédito</option>
+                                        <option value="asesor_financiero">Asesor Financiero</option>
+                                    </optgroup>
+                                    
+                                    <!-- Trabajo -->
+                                    <optgroup label="💼 Trabajo">
+                                        <option value="transporte_trabajo">Transporte al Trabajo</option>
+                                        <option value="comida_trabajo">Comida en el Trabajo</option>
+                                        <option value="uniformes">Uniformes/ropa trabajo</option>
+                                        <option value="herramientas_trabajo">Herramientas de Trabajo</option>
+                                        <option value="capacitacion_empresa">Capacitación Empresa</option>
+                                        <option value="eventos_empresa">Eventos Empresariales</option>
+                                    </optgroup>
+                                    
+                                    <!-- Mascotas -->
+                                    <optgroup label="🐾 Mascotas">
+                                        <option value="veterinaria">Veterinaria</option>
+                                        <option value="accesorios_mascotas">Accesorios Mascotas</option>
+                                        <option value="paseo_mascotas">Paseo/Cuidado Mascotas</option>
+                                        <option value="seguro_mascotas">Seguro Mascotas</option>
+                                        <option value="juguete_mascotas">Juguetes Mascotas</option>
+                                    </optgroup>
+                                    
+                                    <!-- Servicios -->
+                                    <optgroup label="🔧 Servicios">
+                                        <option value="lavanderia">Lavandería</option>
+                                        <option value="limpieza">Limpieza del Hogar</option>
+                                        <option value="reparaciones">Reparaciones</option>
+                                        <option value="mantenimiento">Mantenimiento</option>
+                                        <option value="suscripciones">Suscripciones</option>
+                                        <option value="hosting_dominios">Hosting y Dominios</option>
+                                        <option value="software">Software y Apps</option>
+                                    </optgroup>
+                                    
+                                    <!-- Personal -->
+                                    <optgroup label="👤 Personal">
+                                        <option value="cuidado_personal">Cuidado Personal</option>
+                                        <option value="peluqueria">Peluquería</option>
+                                        <option value="spa">Spa y Masajes</option>
+                                        <option value="gimnasio_personal">Gimnasio Personal</option>
+                                        <option value="psicologo">Psicólogo</option>
+                                        <option value="abogado">Abogado/Consultoría Legal</option>
+                                    </optgroup>
+                                    
+                                    <!-- Emergencias -->
+                                    <optgroup label="🚨 Emergencias">
+                                        <option value="emergencias_medicas">Emergencias Médicas</option>
+                                        <option value="reparaciones_urgentes">Reparaciones Urgentes</option>
+                                        <option value="seguro_emergencia">Seguro de Emergencia</option>
+                                    </optgroup>
+                                    
+                                    <!-- Otros -->
+                                    <optgroup label="📦 Otros">
+                                        <option value="donaciones">Donaciones</option>
+                                        <option value="regalo_aniversario">Regalos Aniversario</option>
+                                        <option value="regalo_cumpleaños">Regalos Cumpleaños</option>
+                                        <option value="impuestos_varios">Impuestos Varios</option>
+                                        <option value="gastos_no_categorizados">Gastos No Categorizados</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="expense-date">Fecha</label>
+                                <input type="date" id="expense-date">
+                            </div>
+                            <div class="form-group">
+                                <label for="expense-description">Descripción</label>
+                                <input type="text" id="expense-description" placeholder="Descripción del gasto">
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <button type="button" class="btn-primary" id="add-expense-btn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+                                </svg>
+                                Agregar Gasto
+                            </button>
+                            <button type="button" class="btn-secondary" id="clear-form-btn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                                </svg>
+                                Limpiar
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Recent Expenses -->
+                <section class="recent-expenses-section">
+                    <h3>Gastos Recientes</h3>
+                    <div class="expenses-list" id="expenses-list">
+                        <!-- Los gastos se cargarán dinámicamente -->
+                        <div class="empty-state">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14H7v-2h5v2zm5-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                            </svg>
+                            <p>No hay gastos registrados</p>
+                            <span>Agrega tu primer gasto para comenzar</span>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="loading-spinner"></div>
+        <p>Cargando gastos...</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../CONFIGURACION DE SUPABASE/supabase-config.js"></script>
+    <script src="../../CONFIGURACION DE SUPABASE/supabase-client.js"></script>
+    <script src="gastos.js"></script>
+</body>
+</html>

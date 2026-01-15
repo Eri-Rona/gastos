@@ -278,10 +278,37 @@ function toggleDropdown() {
     dropdown.classList.toggle('active');
 }
 
-// Event listeners
+// Event listeners para navegación
 if (userDropdownTrigger) userDropdownTrigger.addEventListener('click', toggleDropdown);
 if (editProfileDropdown) editProfileDropdown.addEventListener('click', editProfile);
 if (logoutDropdown) logoutDropdown.addEventListener('click', logout);
+
+// Event listeners para navegación del sidebar
+document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            // Remover clase active de todos los items
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Agregar clase active al item clickeado
+            link.closest('.nav-item').classList.add('active');
+            
+            // Navegación
+            const linkText = link.querySelector('span').textContent;
+            console.log(`Navegando a: ${linkText}`);
+            
+            if (linkText === 'Gastos') {
+                window.location.href = 'gastos/gastos.html';
+            }
+        });
+    });
+});
 
 // Cerrar dropdown al hacer clic fuera
 document.addEventListener('click', (e) => {
