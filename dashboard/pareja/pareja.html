@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Mi Espacio</title>
-    <link rel="stylesheet" href="Dashboard.css">
+    <title>Pareja - Mi Espacio</title>
+    <link rel="stylesheet" href="pareja.css">
 </head>
 <body>
     <div class="dashboard-container">
@@ -15,8 +15,8 @@
             </div>
             <nav class="sidebar-nav">
                 <ul class="nav-list">
-                    <li class="nav-item active">
-                        <a href="#" class="nav-link">
+                    <li class="nav-item">
+                        <a href="../Dashboard.html" class="nav-link">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/>
                             </svg>
@@ -24,7 +24,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="gastos/gastos.html" class="nav-link">
+                        <a href="../gastos/gastos.html" class="nav-link">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1.41 16.09V20h-2.67v-1.93c-1.71-.36-3.16-1.46-3.27-3.4h1.96c.1.81.45 1.61 1.67 1.61 1.16 0 1.6-.64 1.6-1.46 0-.84-.68-1.22-2.05-1.76-1.29-.51-2.73-1.24-2.73-2.97 0-1.39.96-2.49 2.58-2.86V5h2.67v1.7c1.52.36 2.54 1.51 2.63 3.13h-1.96c-.05-.6-.38-1.21-1.39-1.21-1.02 0-1.46.54-1.46 1.22 0 .65.49.97 1.84 1.5 1.32.52 2.93 1.23 2.93 3.22 0 1.48-1.02 2.64-2.79 3.03z"/>
                             </svg>
@@ -32,15 +32,15 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="ingresos/ingresos.html" class="nav-link">
+                        <a href="../ingresos/ingresos.html" class="nav-link">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1.41 16.09V20h-2.67v-1.93c-1.71-.36-3.16-1.46-3.27-3.4h1.96c.1.81.45 1.61 1.67 1.61 1.16 0 1.6-.64 1.6-1.46 0-.84-.68-1.22-2.05-1.76-1.29-.51-2.73-1.24-2.73-2.97 0-1.39.96-2.49 2.58-2.86V5h2.67v1.7c1.52.36 2.54 1.51 2.63 3.13h-1.96c-.05-.6-.38-1.21-1.39-1.21-1.02 0-1.46.54-1.46 1.22 0 .65.49.97 1.84 1.5 1.32.52 2.93 1.23 2.93 3.22 0 1.48-1.02 2.64-2.79 3.03z"/>
                             </svg>
                             <span>Ingresos</span>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a href="http://localhost/PROYECTO%203PARCIAL/dashboard/pareja/pareja.html" class="nav-link">
+                    <li class="nav-item active">
+                        <a href="#" class="nav-link">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
                             </svg>
@@ -57,7 +57,7 @@
             <header class="dashboard-header">
                 <div class="header-content">
                     <div class="logo-section">
-                        <h1></h1>
+                        <h1>Pareja</h1>
                     </div>
                     <div class="user-section">
                         <div class="user-dropdown">
@@ -100,11 +100,7 @@
             <main class="dashboard-main">
                 <section class="balance-overview">
                     <div class="balance-header">
-                        <h2>Balance General</h2>
-                    </div>
-                    <div class="balance-total">
-                        <span id="balanceTotal">$0.00</span>
-                        <p class="balance-change"><span id="balanceChangeArrow">↑</span> <span id="balanceChangePercentage">+0.0%</span> vs mes anterior</p>
+                        <h2>Finanzas de Pareja</h2>
                     </div>
                     
                     <div class="financial-cards">
@@ -115,8 +111,8 @@
                                 </svg>
                             </div>
                             <div class="card-info">
-                                <h3>Ingresos</h3>
-                                <p id="totalIngresos">$0.00</p>
+                                <h3>Ingresos Conjuntos</h3>
+                                <p id="totalIngresosPareja">$0.00</p>
                             </div>
                         </div>
                         <div class="card expense-card">
@@ -126,19 +122,19 @@
                                 </svg>
                             </div>
                             <div class="card-info">
-                                <h3>Gastos</h3>
-                                <p id="totalGastos">$0.00</p>
+                                <h3>Gastos Conjuntos</h3>
+                                <p id="totalGastosPareja">$0.00</p>
                             </div>
                         </div>
                         <div class="card salary-card">
                             <div class="card-icon salary-icon">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1.41 16.09V20h-2.67v-8.93c-1.71-.36-3.16-1.46-3.27-3.4h1.96c.1.81.45 1.61 1.67 1.61 1.16 0 1.6-.64 1.6-1.46 0-.84-.68-1.22-2.05-1.76-1.29-.51-2.73-1.24-2.73-2.97 0-1.39.96-2.49 2.58-2.86V5h2.67v8.93c1.52.36 2.54 1.51 2.63 3.13h-1.96C.05-.6-.38-1.21-1.39-1.21-1.02 0-1.46.54-1.46 1.22 0 .65.49.97 1.84 1.5 1.32.52 2.93 1.23 2.93 3.22 0 1.48-1.02 2.64-2.79 3.03z"/>
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1.41 16.09V20h-2.67v-1.93c-1.71-.36-3.16-1.46-3.27-3.4h1.96c.1.81.45 1.61 1.67 1.61 1.16 0 1.6-.64 1.6-1.46 0-.84-.68-1.22-2.05-1.76-1.29-.51-2.73-1.24-2.73-2.97 0-1.39.96-2.49 2.58-2.86V5h2.67v1.7c1.52.36 2.54 1.51 2.63 3.13h-1.96c-.05-.6-.38-1.21-1.39-1.21-1.02 0-1.46.54-1.46 1.22 0 .65.49.97 1.84 1.5 1.32.52 2.93 1.23 2.93 3.22 0 1.48-1.02 2.64-2.79 3.03z"/>
                                 </svg>
                             </div>
                             <div class="card-info">
-                                <h3>Sueldo</h3>
-                                <p id="userSalary">$0.00</p>
+                                <h3>Ahorro Compartido</h3>
+                                <p id="ahorroCompartido">$0.00</p>
                             </div>
                         </div>
                     </div>
@@ -149,58 +145,9 @@
                         <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
                     </svg>
                     <p>
-                        <span id="finesDisplay"></span>
-                        Tu dashboard está personalizado según tus fines
+                        Gestiona las finanzas compartidas con tu pareja de forma organizada
                     </p>
                 </section>
-
-            <!-- User Preferences Section -->
-            <section class="preferences-section">
-                <h3>Tus Preferencias</h3>
-                <div class="preferences-grid">
-                    <!-- Fines Cards -->
-                    <div class="preference-card" id="fines-card">
-                        <div class="card-header">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                            </svg>
-                            <h4>Tus Fines</h4>
-                        </div>
-                        <div class="card-content">
-                            <div id="fines-list" class="fines-list">
-                                <!-- Se llenará dinámicamente -->
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Payment Card -->
-                    <div class="preference-card" id="payment-card">
-                        <div class="card-header">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/>
-                            </svg>
-                            <h4>Frecuencia de Pago</h4>
-                            <button id="edit-payment-btn" class="edit-btn" title="Editar frecuencia y monto">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/>
-                                </svg>
-                            </button>
-                        </div>
-                        <div class="card-content">
-                            <div class="payment-info">
-                                <div class="payment-item">
-                                    <span class="payment-label">Tipo:</span>
-                                    <span id="payment-type" class="payment-value">-</span>
-                                </div>
-                                <div class="payment-item">
-                                    <span class="payment-label">Monto:</span>
-                                    <span id="payment-amount" class="payment-value">-</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
 
             <!-- Quick Actions -->
             <section class="actions-section">
@@ -210,7 +157,7 @@
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
                         </svg>
-                        Nuevo Proyecto
+                        Agregar Gasto Conjunto
                     </button>
                     <button class="action-btn secondary">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -227,52 +174,13 @@
     <!-- Loading Overlay -->
     <div id="loading-overlay" class="loading-overlay">
         <div class="loading-spinner"></div>
-        <p>Cargando tu dashboard...</p>
-    </div>
-
-    <!-- Modal Editar Pago -->
-    <div id="edit-payment-modal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>Editar Frecuencia y Monto de Pago</h3>
-                <button class="modal-close" id="close-payment-modal">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
-                    </svg>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form id="edit-payment-form">
-                    <div class="form-group">
-                        <label for="edit-payment-type">Frecuencia de Pago</label>
-                        <select id="edit-payment-type" required>
-                            <option value="">Selecciona una opción</option>
-                            <option value="mensual">Mensual</option>
-                            <option value="quincenal">Quincenal</option>
-                            <option value="semestral">Semestral</option>
-                            <option value="anual">Anual</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="edit-payment-amount">Monto de Pago</label>
-                        <div class="input-group">
-                            <span class="input-prefix">$</span>
-                            <input type="number" id="edit-payment-amount" min="0" step="0.01" required placeholder="0.00">
-                        </div>
-                    </div>
-                    <div class="modal-actions">
-                        <button type="button" class="btn-secondary" id="cancel-edit-payment">Cancelar</button>
-                        <button type="submit" class="btn-primary">Guardar Cambios</button>
-                    </div>
-                </form>
-            </div>
-        </div>
+        <p>Cargando información de pareja...</p>
     </div>
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <script src="../CONFIGURACION DE SUPABASE/supabase-config.js"></script>
-    <script src="../CONFIGURACION DE SUPABASE/supabase-client.js"></script>
-    <script type="module" src="Dashboard.js"></script>
+    <script src="../../CONFIGURACION DE SUPABASE/supabase-config.js"></script>
+    <script src="../../CONFIGURACION DE SUPABASE/supabase-client.js"></script>
+    <script type="module" src="pareja.js"></script>
 </body>
 </html>

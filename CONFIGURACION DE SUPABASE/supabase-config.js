@@ -1,9 +1,9 @@
 // Configuración de Supabase
-// REEMPLAZA ESTOS VALORES CON TUS CREDENCIALES REALES
+// CREDENCIALES REALES - NO MODIFICAR
 
 const SUPABASE_CONFIG = {
     url: 'https://iyzsyxdxagdhdhlcudwm.supabase.co',
-    anonKey: 'sb_publishable_r39r-chPCfaVE-z-jtSlSg_jP9vh75i',
+    anonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Iml5enN5eGR4YWdkaGRobGN1ZHdtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njg0MjM0NDgsImV4cCI6MjA4Mzk5OTQ0OH0.VGrgbhr-7KqoBxeNSEAF7HVfinbkGPwFnCONnLetFPs',
     options: {
         auth: {
             autoRefreshToken: true,

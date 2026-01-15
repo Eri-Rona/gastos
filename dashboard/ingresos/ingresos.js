@@ -526,6 +526,45 @@ if (userDropdownTrigger) userDropdownTrigger.addEventListener('click', () => {
 if (editProfileDropdown) editProfileDropdown.addEventListener('click', editProfile);
 if (logoutDropdown) logoutDropdown.addEventListener('click', logout);
 
+// Event listeners para navegación del sidebar
+document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            // Remover clase active de todos los items
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Agregar clase active al item clickeado
+            link.closest('.nav-item').classList.add('active');
+            
+            // Navegación
+            const linkText = link.querySelector('span').textContent.trim();
+            console.log(`Navegando a: ${linkText}`);
+            console.log(`Link href: ${link.href}`);
+            
+            if (linkText.trim() === 'Dashboard') {
+                console.log('Redirigiendo a Dashboard');
+                window.location.href = '../Dashboard.html';
+            } else if (linkText.trim() === 'Gastos') {
+                console.log('Redirigiendo a Gastos');
+                window.location.href = '../gastos/gastos.html';
+            } else if (linkText.trim() === 'Pareja') {
+                console.log('Redirigiendo a Pareja');
+                window.location.href = 'http://localhost/PROYECTO%203PARCIAL/dashboard/pareja/pareja.html';
+            } else {
+                console.log('No se encontró coincidencia para:', `"${linkText}"`);
+                console.log('Longitud del texto:', linkText.length);
+                console.log('Código de caracteres:', Array.from(linkText).map(c => c.charCodeAt(0)));
+            }
+        });
+    });
+});
+
 // Cerrar dropdown al hacer clic fuera
 document.addEventListener('click', (e) => {
     if (!e.target.closest('.user-dropdown')) {

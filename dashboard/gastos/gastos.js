@@ -947,13 +947,23 @@ document.addEventListener('DOMContentLoaded', () => {
             link.closest('.nav-item').classList.add('active');
             
             // Navegación
-            const linkText = link.querySelector('span').textContent;
+            const linkText = link.querySelector('span').textContent.trim();
             console.log(`Navegando a: ${linkText}`);
+            console.log(`Link href: ${link.href}`);
             
-            if (linkText === 'Dashboard') {
-                window.location.href = '../../dashboard/Dashboard.html';
-            } else if (linkText === 'Ingresos') {
+            if (linkText.trim() === 'Dashboard') {
+                console.log('Redirigiendo a Dashboard');
+                window.location.href = '../Dashboard.html';
+            } else if (linkText.trim() === 'Ingresos') {
+                console.log('Redirigiendo a Ingresos');
                 window.location.href = '../ingresos/ingresos.html';
+            } else if (linkText.trim() === 'Pareja') {
+                console.log('Redirigiendo a Pareja');
+                window.location.href = 'http://localhost/PROYECTO%203PARCIAL/dashboard/pareja/pareja.html';
+            } else {
+                console.log('No se encontró coincidencia para:', `"${linkText}"`);
+                console.log('Longitud del texto:', linkText.length);
+                console.log('Código de caracteres:', Array.from(linkText).map(c => c.charCodeAt(0)));
             }
         });
     });

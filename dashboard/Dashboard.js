@@ -566,6 +566,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 window.location.href = 'gastos/gastos.html';
             } else if (linkText === 'Ingresos') {
                 window.location.href = 'ingresos/ingresos.html';
+            } else if (linkText === 'Pareja') {
+                window.location.href = 'http://localhost/PROYECTO%203PARCIAL/dashboard/pareja/pareja.html';
             }
         });
     });
