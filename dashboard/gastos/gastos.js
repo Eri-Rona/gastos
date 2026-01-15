@@ -952,6 +952,8 @@ document.addEventListener('DOMContentLoaded', () => {
             
             if (linkText === 'Dashboard') {
                 window.location.href = '../../dashboard/Dashboard.html';
+            } else if (linkText === 'Ingresos') {
+                window.location.href = '../ingresos/ingresos.html';
             }
         });
     });
