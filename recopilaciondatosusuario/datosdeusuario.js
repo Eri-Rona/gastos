@@ -16,6 +16,7 @@ const message = document.getElementById('message');
 const fileLabel = document.getElementById('file-label');
 const fileText = document.getElementById('file-text');
 const previewImg = document.getElementById('preview-img');
+const fotoPerfilInput = document.getElementById('foto-perfil');
 
 // Función para mostrar mensajes
 function showMessage(text, type) {
@@ -136,9 +137,31 @@ function previewImage(event) {
     }
 }
 
+// Agregar event listener para el input de archivo
+document.addEventListener('DOMContentLoaded', () => {
+    if (fotoPerfilInput) {
+        fotoPerfilInput.addEventListener('change', previewImage);
+    }
+});
+
 // Función para omitir foto
 function skipPhoto() {
     perfilData.foto_perfil = null;
+    
+    // Validar que tengamos los datos necesarios antes de guardar
+    const hasName = !!perfilData.nombre_completo && perfilData.nombre_completo.trim() !== '';
+    const hasFines = !!perfilData.tipo_fines && (
+        (Array.isArray(perfilData.tipo_fines) && perfilData.tipo_fines.length > 0) ||
+        (typeof perfilData.tipo_fines === 'string' && perfilData.tipo_fines.trim() !== '')
+    );
+    const hasPayment = !!perfilData.tipo_pago && ['mensual', 'quincenal', 'semestral', 'anual'].includes(perfilData.tipo_pago);
+    const hasAmount = !!perfilData.monto_pago && parseFloat(perfilData.monto_pago) > 0;
+    
+    if (!hasName || !hasFines || !hasPayment || !hasAmount) {
+        showMessage('Por favor completa los pasos anteriores antes de omitir la foto', 'error');
+        return;
+    }
+    
     saveProfile();
 }
 
@@ -176,14 +199,14 @@ async function obtenerPerfil() {
 // Función para guardar perfil
 async function saveProfile() {
     try {
-        // Validar último paso si hay foto
-        const fotoFile = document.getElementById('foto-perfil').files[0];
+        // Validar último paso si hay foto NUEVA
+        const fotoFile = fotoPerfilInput.files[0];
         if (fotoFile) {
             const base64Image = await fileToBase64(fotoFile);
             perfilData.foto_perfil = base64Image;
-        } else {
-            perfilData.foto_perfil = null;
         }
+        // NOTA: Si no hay archivo nuevo, NO eliminar la foto existente
+        // Solo se actualiza si el usuario sube una nueva foto
         
         // Agregar user_id
         perfilData.user_id = currentUser.id;
@@ -203,7 +226,7 @@ async function saveProfile() {
         
         // Redirigir después de 2 segundos
         setTimeout(() => {
-            window.location.href = '../index.html';
+            window.location.href = '../Dashboard/Dashboard.html';
         }, 2000);
         
         return true;

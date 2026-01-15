@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Mi Espacio</title>
+    <link rel="stylesheet" href="Dashboard.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Header -->
+        <header class="dashboard-header">
+            <div class="header-content">
+                <div class="logo-section">
+                    <h1>Mi Dashboard</h1>
+                </div>
+                <div class="user-section">
+                    <div class="user-dropdown">
+                        <div class="user-avatar-container" id="user-dropdown-trigger">
+                            <img id="user-avatar" src="" alt="Avatar" class="user-avatar">
+                            <div class="user-info-inline">
+                                <span id="user-name-inline" class="user-name-inline">Usuario</span>
+                            </div>
+                            <div class="dropdown-arrow">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M7 10l5 5 5-5z"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu">
+                            <div class="dropdown-header">
+                                <span id="dropdown-user-name" class="dropdown-user-name">Usuario</span>
+                                <span id="dropdown-user-email" class="dropdown-user-email">email@example.com</span>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <button class="dropdown-item" id="edit-profile-dropdown">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/>
+                                </svg>
+                                Editar Perfil
+                            </button>
+                            <button class="dropdown-item logout-item" id="logout-dropdown">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"/>
+                                </svg>
+                                Cerrar Sesión
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <!-- Welcome Section -->
+            <section class="welcome-section">
+                <div class="welcome-content">
+                    <h2>¡Bienvenido, <span id="welcome-name">Usuario</span>!</h2>
+                    <p>Tu dashboard personalizado está listo para usar.</p>
+                </div>
+            </section>
+
+            <!-- User Preferences Section -->
+            <section class="preferences-section">
+                <h3>Tus Preferencias</h3>
+                <div class="preferences-grid">
+                    <!-- Fines Cards -->
+                    <div class="preference-card" id="fines-card">
+                        <div class="card-header">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                            <h4>Tus Fines</h4>
+                        </div>
+                        <div class="card-content">
+                            <div id="fines-list" class="fines-list">
+                                <!-- Se llenará dinámicamente -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Payment Card -->
+                    <div class="preference-card" id="payment-card">
+                        <div class="card-header">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/>
+                            </svg>
+                            <h4>Frecuencia de Pago</h4>
+                        </div>
+                        <div class="card-content">
+                            <div class="payment-info">
+                                <div class="payment-item">
+                                    <span class="payment-label">Tipo:</span>
+                                    <span id="payment-type" class="payment-value">-</span>
+                                </div>
+                                <div class="payment-item">
+                                    <span class="payment-label">Monto:</span>
+                                    <span id="payment-amount" class="payment-value">-</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Actions -->
+            <section class="actions-section">
+                <h3>Acciones Rápidas</h3>
+                <div class="actions-grid">
+                    <button class="action-btn primary">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+                        </svg>
+                        Nuevo Proyecto
+                    </button>
+                    <button class="action-btn secondary">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/>
+                        </svg>
+                        Ver Historial
+                    </button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="loading-spinner"></div>
+        <p>Cargando tu dashboard...</p>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../CONFIGURACION DE SUPABASE/supabase-config.js"></script>
+    <script src="../CONFIGURACION DE SUPABASE/supabase-client.js"></script>
+    <script type="module" src="Dashboard.js"></script>
+</body>
+</html>
