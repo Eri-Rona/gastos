@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Negocios - Mi Espacio</title>
+    <title>Gestión de Negocios - Mi Espacio</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 </head>
@@ -66,7 +66,7 @@
             <header class="dashboard-header">
                 <div class="header-content">
                     <div class="logo-section">
-                        <h1>Negocios</h1>
+                        <h1></h1>
                     </div>
                     <div class="user-section">
                         <div class="user-dropdown">
@@ -111,40 +111,40 @@
                 <section class="welcome-section">
                     <div class="welcome-content">
                         <h2>Gestión de Negocios</h2>
-                        <p>Administra y controla todos los gastos de tu negocio de manera eficiente.</p>
+                        <p>Administra ventas, clientes y recordatorios de manera eficiente.</p>
                     </div>
                 </section>
 
-                <!-- Negocios Overview -->
+                <!-- Business Overview -->
                 <section class="overview-section">
-                    <h3>Resumen de Gastos del Negocio</h3>
+                    <h3>Resumen del Negocio</h3>
                     <div class="overview-grid">
                         <div class="overview-card">
                             <div class="card-header">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                                     <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1.41 16.09V20h-2.67v-1.93c-1.71-.36-3.16-1.46-3.27-3.4h1.96c.1.81.45 1.61 1.67 1.61 1.16 0 1.6-.64 1.6-1.46 0-.84-.68-1.22-2.05-1.76-1.29-.51-2.73-1.24-2.73-2.97 0-1.39.96-2.49 2.58-2.86V5h2.67v1.7c1.52.36 2.54 1.51 2.63 3.13h-1.96c-.05-.6-.38-1.21-1.39-1.21-1.02 0-1.46.54-1.46 1.22 0 .65.49.97 1.84 1.5 1.32.52 2.93 1.23 2.93 3.22 0 1.48-1.02 2.64-2.79 3.03z"/>
                                 </svg>
-                                <h4>Total del Mes</h4>
+                                <h4>Ventas del Mes</h4>
                             </div>
                             <div class="card-content">
                                 <div class="amount-display">
-                                    <span class="amount" id="total-mes-negocio">$0.00</span>
+                                    <span class="amount" id="ventas-mes">$0.00</span>
                                     <span class="period">Este mes</span>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="overview-card" onclick="showTodayExpensesModal()" style="cursor: pointer;">
+                        <div class="overview-card" onclick="showAddSaleModal()" style="cursor: pointer;">
                             <div class="card-header">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/>
+                                    <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
                                 </svg>
-                                <h4>Gastos Hoy</h4>
+                                <h4>Nueva Venta</h4>
                             </div>
                             <div class="card-content">
                                 <div class="amount-display">
-                                    <span class="amount" id="gastos-hoy-negocio">$0.00</span>
-                                    <span class="period">Hoy</span>
+                                    <span class="amount">+</span>
+                                    <span class="period">Agregar venta</span>
                                 </div>
                             </div>
                         </div>
@@ -152,14 +152,14 @@
                         <div class="overview-card">
                             <div class="card-header">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/>
+                                    <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
                                 </svg>
-                                <h4>Total General</h4>
+                                <h4>Total Clientes</h4>
                             </div>
                             <div class="card-content">
                                 <div class="amount-display">
-                                    <span class="amount" id="total-general-negocio">$0.00</span>
-                                    <span class="period">Total</span>
+                                    <span class="amount" id="total-clientes">0</span>
+                                    <span class="period">Registrados</span>
                                 </div>
                             </div>
                         </div>
@@ -170,76 +170,232 @@
                 <section class="actions-section">
                     <h3>Acciones Rápidas</h3>
                     <div class="actions-grid">
-                        <button class="action-btn primary" onclick="showAddExpenseModal()">
+                        <button class="action-btn primary" onclick="showAddSaleModal()">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
                             </svg>
-                            Nuevo Gasto
+                            Nueva Venta
                         </button>
-                        <button class="action-btn secondary" onclick="showExpensesList()">
+                        <button class="action-btn secondary" onclick="showAddClientModal()">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/>
+                                <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
                             </svg>
-                            Ver Todos
+                            Agregar Cliente
+                        </button>
+                        <button class="action-btn secondary" onclick="showAddReminderModal()">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/>
+                            </svg>
+                            Agregar Recordatorio
                         </button>
                     </div>
                 </section>
 
-                <!-- Recent Expenses -->
+                <!-- Charts Section -->
+                <section class="charts-section">
+                    <h3>Análisis de Productividad</h3>
+                    <div class="charts-grid">
+                        <!-- Ventas Mensuales Chart -->
+                        <div class="chart-card">
+                            <div class="chart-header">
+                                <h4>Ventas Mensuales</h4>
+                                <div class="chart-legend">
+                                    <span class="legend-item">
+                                        <span class="legend-color" style="background: #667eea;"></span>
+                                        Ventas
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="chart-container">
+                                <canvas id="ventasChart" width="300" height="200"></canvas>
+                            </div>
+                        </div>
+
+                        <!-- Clientes por Categoría Chart -->
+                        <div class="chart-card">
+                            <div class="chart-header">
+                                <h4>Distribución de Clientes</h4>
+                                <div class="chart-legend">
+                                    <span class="legend-item">
+                                        <span class="legend-color" style="background: #28a745;"></span>
+                                        Activos
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="chart-container">
+                                <canvas id="clientesChart" width="300" height="200"></canvas>
+                            </div>
+                        </div>
+
+                        <!-- Productividad Diaria Chart -->
+                        <div class="chart-card">
+                            <div class="chart-header">
+                                <h4>Productividad Semanal</h4>
+                                <div class="chart-legend">
+                                    <span class="legend-item">
+                                        <span class="legend-color" style="background: #ffc107;"></span>
+                                        Actividades
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="chart-container">
+                                <canvas id="productividadChart" width="300" height="200"></canvas>
+                            </div>
+                        </div>
+
+                        <!-- Resumen de Métricas -->
+                        <div class="chart-card metrics-card">
+                            <div class="chart-header">
+                                <h4>Métricas Clave</h4>
+                            </div>
+                            <div class="metrics-grid">
+                                <div class="metric-item">
+                                    <div class="metric-value" id="metric-ventas-promedio">$0</div>
+                                    <div class="metric-label">Venta Promedio</div>
+                                </div>
+                                <div class="metric-item">
+                                    <div class="metric-value" id="metric-clientes-nuevos">0</div>
+                                    <div class="metric-label">Clientes Nuevos (Mes)</div>
+                                </div>
+                                <div class="metric-item">
+                                    <div class="metric-value" id="metric-tasa-conversion">0%</div>
+                                    <div class="metric-label">Tasa de Conversión</div>
+                                </div>
+                                <div class="metric-item">
+                                    <div class="metric-value" id="metric-actividad-dia">0</div>
+                                    <div class="metric-label">Actividades Hoy</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Recent Activities -->
                 <section class="recent-section">
-                    <h3>Gastos Recientes</h3>
-                    <div class="recent-list" id="recent-expenses-list">
-                        <!-- Los gastos recientes se cargarán aquí dinámicamente -->
+                    <h3>Actividades Recientes</h3>
+                    <div class="recent-list" id="recent-activities-list">
+                        <!-- Las actividades recientes se cargarán aquí dinámicamente -->
                     </div>
                 </section>
             </main>
         </div>
     </div>
 
-    <!-- Add Expense Modal -->
-    <div id="addExpenseModal" class="modal">
+    <!-- Add Sale Modal -->
+    <div id="addSaleModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h3>Agregar Nuevo Gasto</h3>
-                <span class="close" onclick="closeAddExpenseModal()">&times;</span>
+                <h3>Agregar Nueva Venta</h3>
+                <span class="close" onclick="closeAddSaleModal()">&times;</span>
             </div>
             <div class="modal-body">
-                <form id="addExpenseForm">
+                <form id="addSaleForm">
                     <div class="form-group">
-                        <label for="expense-concept">Concepto</label>
-                        <input type="text" id="expense-concept" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="expense-amount">Monto</label>
-                        <input type="number" id="expense-amount" step="0.01" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="expense-category">Categoría</label>
-                        <select id="expense-category" required>
-                            <option value="">Seleccionar categoría</option>
-                            <option value="alquiler">Alquiler</option>
-                            <option value="servicios">Servicios</option>
-                            <option value="suministros">Suministros</option>
-                            <option value="personal">Personal</option>
-                            <option value="marketing">Marketing</option>
-                            <option value="tecnologia">Tecnología</option>
-                            <option value="transporte">Transporte</option>
-                            <option value="impuestos">Impuestos</option>
-                            <option value="mantenimiento">Mantenimiento</option>
-                            <option value="otros">Otros</option>
+                        <label for="sale-client">Cliente</label>
+                        <select id="sale-client" required>
+                            <option value="">Seleccionar cliente</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="expense-date">Fecha</label>
-                        <input type="date" id="expense-date" required>
+                        <label for="sale-product">Producto/Servicio</label>
+                        <input type="text" id="sale-product" required placeholder="Nombre del producto o servicio">
                     </div>
                     <div class="form-group">
-                        <label for="expense-description">Descripción</label>
-                        <textarea id="expense-description" rows="3"></textarea>
+                        <label for="sale-amount">Monto</label>
+                        <input type="number" id="sale-amount" step="0.01" required placeholder="0.00">
+                    </div>
+                    <div class="form-group">
+                        <label for="sale-date">Fecha</label>
+                        <input type="date" id="sale-date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="sale-description">Descripción</label>
+                        <textarea id="sale-description" rows="3"></textarea>
                     </div>
                     <div class="form-actions">
-                        <button type="button" class="btn-secondary" onclick="closeAddExpenseModal()">Cancelar</button>
-                        <button type="submit" class="btn-primary">Guardar Gasto</button>
+                        <button type="button" class="btn-secondary" onclick="closeAddSaleModal()">Cancelar</button>
+                        <button type="submit" class="btn-primary">Guardar Venta</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Client Modal -->
+    <div id="addClientModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Agregar Nuevo Cliente</h3>
+                <span class="close" onclick="closeAddClientModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="addClientForm">
+                    <div class="form-group">
+                        <label for="client-name">Nombre Completo</label>
+                        <input type="text" id="client-name" required placeholder="Nombre del cliente">
+                    </div>
+                    <div class="form-group">
+                        <label for="client-email">Email</label>
+                        <input type="email" id="client-email" placeholder="email@ejemplo.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="client-phone">Teléfono</label>
+                        <input type="tel" id="client-phone" placeholder="+1234567890">
+                    </div>
+                    <div class="form-group">
+                        <label for="client-address">Dirección</label>
+                        <input type="text" id="client-address" placeholder="Dirección del cliente">
+                    </div>
+                    <div class="form-group">
+                        <label for="client-notes">Notas</label>
+                        <textarea id="client-notes" rows="3"></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary" onclick="closeAddClientModal()">Cancelar</button>
+                        <button type="submit" class="btn-primary">Guardar Cliente</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Reminder Modal -->
+    <div id="addReminderModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Agregar Nuevo Recordatorio</h3>
+                <span class="close" onclick="closeAddReminderModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="addReminderForm">
+                    <div class="form-group">
+                        <label for="reminder-title">Título</label>
+                        <input type="text" id="reminder-title" required placeholder="Título del recordatorio">
+                    </div>
+                    <div class="form-group">
+                        <label for="reminder-description">Descripción</label>
+                        <textarea id="reminder-description" rows="3" required placeholder="Detalles del recordatorio"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="reminder-date">Fecha</label>
+                        <input type="date" id="reminder-date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reminder-time">Hora</label>
+                        <input type="time" id="reminder-time" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reminder-priority">Prioridad</label>
+                        <select id="reminder-priority" required>
+                            <option value="">Seleccionar prioridad</option>
+                            <option value="alta">Alta</option>
+                            <option value="media">Media</option>
+                            <option value="baja">Baja</option>
+                        </select>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary" onclick="closeAddReminderModal()">Cancelar</button>
+                        <button type="submit" class="btn-primary">Guardar Recordatorio</button>
                     </div>
                 </form>
             </div>
@@ -247,6 +403,7 @@
     </div>
 
     <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="../../CONFIGURACION DE SUPABASE/supabase-config.js"></script>
     <script src="../../CONFIGURACION DE SUPABASE/supabase-client.js"></script>
